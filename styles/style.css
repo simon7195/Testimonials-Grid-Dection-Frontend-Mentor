@@ -1,0 +1,138 @@
+:root {
+  /* Primary colors */
+  --primary-moderate-violet: hsl(263, 55%, 52%);
+  --primary-very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --primary-very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --primary-white: hsl(0, 0%, 100%);
+  /* Neutral */
+  --neutral-light-gray: hsl(0, 0%, 81%);
+  --neutral-light-grayish-blue: hsl(210, 46%, 95%);
+  /* Global font size */
+  font-size: 13px;
+  /* Font weight */
+  --font-weight-regular: 500;
+  --font-weight-bold: 600;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: var(--neutral-light-grayish-blue);
+}
+
+/* Card background colors */
+.violet {
+    background-color: var(--primary-moderate-violet);
+}
+.dark-grayish-blue {
+    background-color: var(--primary-very-dark-grayish-blue);
+}
+.very-dark-blackish-blue {
+    background-color: var(--primary-very-dark-blackish-blue);
+}
+.white {
+    background-color: var(--primary-white);
+}
+
+/* Quote background image */
+.bg-image {
+    position: absolute;
+    top: 0;
+    right: 5rem;
+}
+
+/* Profile pictures */
+.profile-pic {
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Profile zone */
+.profile {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+/* Cards */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 18px 17px 23px -14px rgba(0,0,0,0.32);
+}
+
+/* Section */
+#testimonials {
+    display: grid;
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+
+
+/* Font */
+.name, .vg, .text, .quote {
+    position: relative;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-style: normal;
+    z-index: 1;
+}
+.violet, .dark-grayish-blue, .very-dark-blackish-blue {
+    color: var(--primary-white);
+}
+.white {
+    color: var(--primary-very-dark-blackish-blue);
+}
+.name {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+}
+.vg {
+    opacity: 0.5;
+    font-size: 1rem;
+    font-weight: var(--font-weight-regular);
+}
+.text {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+}
+.quote {
+    opacity: 0.7;
+    font-weight: var(--font-weight-regular);
+}
+
+/* Queries */
+@media (min-width: 1024px) {
+    #testimonials {
+        padding: 10%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "a a b c"
+                             "d e e c";
+    }
+    .a {
+        grid-area: a;
+    }
+    .b {
+        grid-area: b;
+    }
+    .c {
+        grid-area: c;
+    }
+    .d {
+        grid-area: d;
+    }
+    .e {
+        grid-area: e;
+    }
+}
